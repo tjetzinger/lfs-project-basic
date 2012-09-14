@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object pk="1" model="portlets.slot">
+    <field type="CharField" name="name">Left</field>
+  </object>
+  <object pk="2" model="portlets.slot">
+    <field type="CharField" name="name">Right</field>
+  </object>
+  <object pk="1" model="core.country">
+    <field type="CharField" name="code">de</field>
+    <field type="CharField" name="name">Deutschland</field>
+  </object>
+  <object pk="7" model="core.country">
+    <field type="CharField" name="code">fr</field>
+    <field type="CharField" name="name">France</field>
+  </object>
+  <object pk="6" model="core.country">
+    <field type="CharField" name="code">gb</field>
+    <field type="CharField" name="name">Great Britain</field>
+  </object>
+  <object pk="5" model="core.country">
+    <field type="CharField" name="code">ie</field>
+    <field type="CharField" name="name">Ireland</field>
+  </object>
+  <object pk="4" model="core.country">
+    <field type="CharField" name="code">nl</field>
+    <field type="CharField" name="name">Netherlands</field>
+  </object>
+  <object pk="3" model="core.country">
+    <field type="CharField" name="code">us</field>
+    <field type="CharField" name="name">USA</field>
+  </object>
+  <object pk="2" model="core.country">
+    <field type="CharField" name="code">at</field>
+    <field type="CharField" name="name">Österreich</field>
+  </object>
+  <object pk="1" model="core.shop">
+    <field type="CharField" name="name">LFS</field>
+    <field type="CharField" name="shop_owner">John Doe</field>
+    <field type="CharField" name="from_email"></field>
+    <field type="TextField" name="notification_emails"></field>
+    <field type="TextField" name="description"></field>
+    <field type="FileField" name="image"></field>
+    <field to="catalog.staticblock" name="static_block" rel="ManyToOneRel"><None></None></field>
+    <field type="IntegerField" name="product_cols">1</field>
+    <field type="IntegerField" name="product_rows">10</field>
+    <field type="IntegerField" name="category_cols">1</field>
+    <field type="CharField" name="google_analytics_id"></field>
+    <field type="BooleanField" name="ga_site_tracking">False</field>
+    <field type="BooleanField" name="ga_ecommerce_tracking">False</field>
+    <field to="core.country" name="default_country" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="default_locale">en_US.UTF-8</field>
+    <field type="BooleanField" name="use_international_currency_code">False</field>
+    <field type="CharField" name="price_calculator">lfs.gross_price.GrossPriceCalculator</field>
+    <field type="PositiveSmallIntegerField" name="checkout_type">0</field>
+    <field type="BooleanField" name="confirm_toc">False</field>
+    <field type="CharField" name="meta_title">&lt;name&gt;</field>
+    <field type="TextField" name="meta_keywords"></field>
+    <field type="TextField" name="meta_description"></field>
+    <field to="core.country" name="invoice_countries" rel="ManyToManyRel"><object pk="1"></object><object pk="3"></object><object pk="2"></object></field>
+    <field to="core.country" name="shipping_countries" rel="ManyToManyRel"><object pk="1"></object><object pk="5"></object><object pk="4"></object><object pk="3"></object><object pk="2"></object></field>
+  </object>
+  <object pk="1" model="payment.paymentmethod">
+    <field type="BooleanField" name="active">True</field>
+    <field type="IntegerField" name="priority">1</field>
+    <field type="CharField" name="name">Direct debit</field>
+    <field type="TextField" name="description"></field>
+    <field type="TextField" name="note"></field>
+    <field type="FileField" name="image"></field>
+    <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
+    <field type="FloatField" name="price">0.0</field>
+    <field type="BooleanField" name="deletable">False</field>
+    <field type="CharField" name="module"></field>
+    <field type="PositiveSmallIntegerField" name="type">0</field>
+  </object>
+  <object pk="2" model="payment.paymentmethod">
+    <field type="BooleanField" name="active">True</field>
+    <field type="IntegerField" name="priority">2</field>
+    <field type="CharField" name="name">Cash on delivery</field>
+    <field type="TextField" name="description"></field>
+    <field type="TextField" name="note"></field>
+    <field type="FileField" name="image"></field>
+    <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
+    <field type="FloatField" name="price">17.9</field>
+    <field type="BooleanField" name="deletable">False</field>
+    <field type="CharField" name="module"></field>
+    <field type="PositiveSmallIntegerField" name="type">0</field>
+  </object>
+  <object pk="3" model="payment.paymentmethod">
+    <field type="BooleanField" name="active">True</field>
+    <field type="IntegerField" name="priority">3</field>
+    <field type="CharField" name="name">PayPal</field>
+    <field type="TextField" name="description"></field>
+    <field type="TextField" name="note"></field>
+    <field type="FileField" name="image"></field>
+    <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
+    <field type="FloatField" name="price">0.0</field>
+    <field type="BooleanField" name="deletable">False</field>
+    <field type="CharField" name="module"></field>
+    <field type="PositiveSmallIntegerField" name="type">0</field>
+  </object>
+  <object pk="4" model="payment.paymentmethod">
+    <field type="BooleanField" name="active">True</field>
+    <field type="IntegerField" name="priority">4</field>
+    <field type="CharField" name="name">Prepayment</field>
+    <field type="TextField" name="description"></field>
+    <field type="TextField" name="note"></field>
+    <field type="FileField" name="image"></field>
+    <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
+    <field type="FloatField" name="price">0.0</field>
+    <field type="BooleanField" name="deletable">False</field>
+    <field type="CharField" name="module"></field>
+    <field type="PositiveSmallIntegerField" name="type">0</field>
+  </object>
+  <object pk="5" model="payment.paymentmethod">
+    <field type="BooleanField" name="active">True</field>
+    <field type="IntegerField" name="priority">5</field>
+    <field type="CharField" name="name">By invoice</field>
+    <field type="TextField" name="description"></field>
+    <field type="TextField" name="note"></field>
+    <field type="FileField" name="image"></field>
+    <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
+    <field type="FloatField" name="price">0.0</field>
+    <field type="BooleanField" name="deletable">False</field>
+    <field type="CharField" name="module"></field>
+    <field type="PositiveSmallIntegerField" name="type">0</field>
+  </object>
+</django-objects>
