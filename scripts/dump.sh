@@ -6,4 +6,4 @@ MANAGER=$BASEDIR/../manage.py
 
 #echo $TARGETFILE
 #echo $MANAGER
-python $MANAGER dumpdata --format=xml --indent 2 --exclude auth.user --exclude auth.permission --exclude contenttypes.contenttype --exclude sessions.session --exclude sites.site --exclude portlets.portletregistration --exclude export.script > $TARGETFILE
+python $MANAGER dumpdata --format=xml --indent 2 --natural --exclude contenttypes.contenttype --exclude portlets.portletregistration --exclude sites.site --exclude export.script --exclude auth.permission > $TARGETFILE
