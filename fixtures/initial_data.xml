@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <django-objects version="1.0">
+  <object pk="cd7e7c50ad8afdcb5f7d0b6decd4f2fb" model="sessions.session">
+    <field type="TextField" name="session_data">MjcyYWQ0YjAzYWI3NGM4ZDM5MWY3NzcxZmNmN2MxMzEzN2E4ODY2OTqAAn1xAS4=
+</field>
+    <field type="DateTimeField" name="expire_date">2012-09-28T17:31:22.329507+00:00</field>
+  </object>
+  <object pk="1" model="portlets.portletassignment">
+    <field to="portlets.slot" name="slot" rel="ManyToOneRel">2</field>
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel"><natural>core</natural><natural>shop</natural></field>
+    <field type="PositiveIntegerField" name="content_id">1</field>
+    <field to="contenttypes.contenttype" name="portlet_type" rel="ManyToOneRel"><natural>portlet</natural><natural>cartportlet</natural></field>
+    <field type="PositiveIntegerField" name="portlet_id">1</field>
+    <field type="PositiveSmallIntegerField" name="position">999</field>
+  </object>
+  <object pk="2" model="portlets.portletassignment">
+    <field to="portlets.slot" name="slot" rel="ManyToOneRel">1</field>
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel"><natural>core</natural><natural>shop</natural></field>
+    <field type="PositiveIntegerField" name="content_id">1</field>
+    <field to="contenttypes.contenttype" name="portlet_type" rel="ManyToOneRel"><natural>portlet</natural><natural>categoriesportlet</natural></field>
+    <field type="PositiveIntegerField" name="portlet_id">1</field>
+    <field type="PositiveSmallIntegerField" name="position">999</field>
+  </object>
+  <object pk="3" model="portlets.portletassignment">
+    <field to="portlets.slot" name="slot" rel="ManyToOneRel">1</field>
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel"><natural>core</natural><natural>shop</natural></field>
+    <field type="PositiveIntegerField" name="content_id">1</field>
+    <field to="contenttypes.contenttype" name="portlet_type" rel="ManyToOneRel"><natural>portlet</natural><natural>pagesportlet</natural></field>
+    <field type="PositiveIntegerField" name="portlet_id">1</field>
+    <field type="PositiveSmallIntegerField" name="position">999</field>
+  </object>
   <object pk="1" model="portlets.slot">
     <field type="CharField" name="name">Left</field>
   </object>
@@ -7,39 +36,65 @@
     <field type="CharField" name="name">Right</field>
   </object>
   <object pk="1" model="core.country">
-    <field type="CharField" name="code">de</field>
-    <field type="CharField" name="name">Deutschland</field>
-  </object>
-  <object pk="7" model="core.country">
-    <field type="CharField" name="code">fr</field>
-    <field type="CharField" name="name">France</field>
-  </object>
-  <object pk="6" model="core.country">
-    <field type="CharField" name="code">gb</field>
-    <field type="CharField" name="name">Great Britain</field>
-  </object>
-  <object pk="5" model="core.country">
-    <field type="CharField" name="code">ie</field>
-    <field type="CharField" name="name">Ireland</field>
-  </object>
-  <object pk="4" model="core.country">
-    <field type="CharField" name="code">nl</field>
-    <field type="CharField" name="name">Netherlands</field>
-  </object>
-  <object pk="3" model="core.country">
     <field type="CharField" name="code">us</field>
     <field type="CharField" name="name">USA</field>
   </object>
-  <object pk="2" model="core.country">
-    <field type="CharField" name="code">at</field>
-    <field type="CharField" name="name">Österreich</field>
+  <object pk="2" model="core.actiongroup">
+    <field type="CharField" name="name">Footer</field>
+  </object>
+  <object pk="1" model="core.actiongroup">
+    <field type="CharField" name="name">Tabs</field>
+  </object>
+  <object pk="1" model="core.action">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Contact</field>
+    <field type="CharField" name="link">/contact</field>
+    <field to="core.actiongroup" name="group" rel="ManyToOneRel">1</field>
+    <field type="IntegerField" name="position">1</field>
+    <field to="core.action" name="parent" rel="ManyToOneRel"><None></None></field>
+  </object>
+  <object pk="2" model="core.action">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Terms and Conditions</field>
+    <field type="CharField" name="link">/page/terms-and-conditions</field>
+    <field to="core.actiongroup" name="group" rel="ManyToOneRel">2</field>
+    <field type="IntegerField" name="position">1</field>
+    <field to="core.action" name="parent" rel="ManyToOneRel"><None></None></field>
+  </object>
+  <object pk="3" model="core.action">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Imprint</field>
+    <field type="CharField" name="link">/page/imprint</field>
+    <field to="core.actiongroup" name="group" rel="ManyToOneRel">2</field>
+    <field type="IntegerField" name="position">2</field>
+    <field to="core.action" name="parent" rel="ManyToOneRel"><None></None></field>
   </object>
   <object pk="1" model="core.shop">
     <field type="CharField" name="name">LFS</field>
     <field type="CharField" name="shop_owner">John Doe</field>
-    <field type="CharField" name="from_email"></field>
-    <field type="TextField" name="notification_emails"></field>
-    <field type="TextField" name="description"></field>
+    <field type="CharField" name="from_email">john@doe.com</field>
+    <field type="TextField" name="notification_emails">john@doe.com</field>
+    <field type="TextField" name="description">
+&lt;h1 class="first-heading"&gt;Welcome to LFS!&lt;/h1&gt;
+&lt;p&gt;LFS is an online shop based on &lt;a href="http://www.python.org/" target="_blank"&gt;Python&lt;/a&gt;,
+&lt;a href="http://www.djangoproject.com/" target="_blank"&gt;Django&lt;/a&gt; and
+&lt;a href="http://jquery.com/" target="_blank"&gt;jQuery&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1&gt;Login&lt;/h1&gt;
+&lt;p&gt;Go to the &lt;a href="/manage"&gt;management interface&lt;/a&gt; to start to add content.&lt;/p&gt;
+
+&lt;h1&gt;Information &amp;amp; Help&lt;/h1&gt;
+&lt;p&gt;You can find more information and help on following places:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.getlfs.com" target="_blank"&gt;Official page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://packages.python.org/django-lfs/index.html" target="_blank"&gt;Documentation on PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pypi.python.org/pypi/django-lfs" target="_blank"&gt;Releases on PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bitbucket.org/diefenbach/django-lfs" target="_blank"&gt;Source code on bitbucket.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://groups.google.com/group/django-lfs" target="_blank"&gt;Google Group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twitter.com/lfsproject" target="_blank"&gt;lfsproject on Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="irc://irc.freenode.net/django-lfs" target="_blank"&gt;IRC&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</field>
     <field type="FileField" name="image"></field>
     <field to="catalog.staticblock" name="static_block" rel="ManyToOneRel"><None></None></field>
     <field type="IntegerField" name="product_cols">1</field>
@@ -57,8 +112,50 @@
     <field type="CharField" name="meta_title">&lt;name&gt;</field>
     <field type="TextField" name="meta_keywords"></field>
     <field type="TextField" name="meta_description"></field>
-    <field to="core.country" name="invoice_countries" rel="ManyToManyRel"><object pk="1"></object><object pk="3"></object><object pk="2"></object></field>
-    <field to="core.country" name="shipping_countries" rel="ManyToManyRel"><object pk="1"></object><object pk="5"></object><object pk="4"></object><object pk="3"></object><object pk="2"></object></field>
+    <field to="core.country" name="invoice_countries" rel="ManyToManyRel"><object pk="1"></object></field>
+    <field to="core.country" name="shipping_countries" rel="ManyToManyRel"><object pk="1"></object></field>
+  </object>
+  <object pk="1" model="core.application">
+    <field type="CharField" name="version">0.7</field>
+  </object>
+  <object pk="1" model="page.page">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Root</field>
+    <field type="SlugField" name="slug"></field>
+    <field type="IntegerField" name="position">999</field>
+    <field type="BooleanField" name="exclude_from_navigation">True</field>
+    <field type="TextField" name="short_text"></field>
+    <field type="TextField" name="body"></field>
+    <field type="FileField" name="file"></field>
+    <field type="CharField" name="meta_title">&lt;title&gt;</field>
+    <field type="TextField" name="meta_keywords"></field>
+    <field type="TextField" name="meta_description"></field>
+  </object>
+  <object pk="2" model="page.page">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Terms and Conditions</field>
+    <field type="SlugField" name="slug">terms-and-conditions</field>
+    <field type="IntegerField" name="position">999</field>
+    <field type="BooleanField" name="exclude_from_navigation">False</field>
+    <field type="TextField" name="short_text"></field>
+    <field type="TextField" name="body">Enter your terms and conditions here.</field>
+    <field type="FileField" name="file"></field>
+    <field type="CharField" name="meta_title">&lt;title&gt;</field>
+    <field type="TextField" name="meta_keywords"></field>
+    <field type="TextField" name="meta_description"></field>
+  </object>
+  <object pk="3" model="page.page">
+    <field type="BooleanField" name="active">True</field>
+    <field type="CharField" name="title">Imprint</field>
+    <field type="SlugField" name="slug">imprint</field>
+    <field type="IntegerField" name="position">999</field>
+    <field type="BooleanField" name="exclude_from_navigation">False</field>
+    <field type="TextField" name="short_text"></field>
+    <field type="TextField" name="body">Enter your imprint here.</field>
+    <field type="FileField" name="file"></field>
+    <field type="CharField" name="meta_title">&lt;title&gt;</field>
+    <field type="TextField" name="meta_keywords"></field>
+    <field type="TextField" name="meta_description"></field>
   </object>
   <object pk="1" model="payment.paymentmethod">
     <field type="BooleanField" name="active">True</field>
@@ -71,7 +168,7 @@
     <field type="FloatField" name="price">0.0</field>
     <field type="BooleanField" name="deletable">False</field>
     <field type="CharField" name="module"></field>
-    <field type="PositiveSmallIntegerField" name="type">0</field>
+    <field type="PositiveSmallIntegerField" name="type">1</field>
   </object>
   <object pk="2" model="payment.paymentmethod">
     <field type="BooleanField" name="active">True</field>
@@ -81,7 +178,7 @@
     <field type="TextField" name="note"></field>
     <field type="FileField" name="image"></field>
     <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
-    <field type="FloatField" name="price">17.9</field>
+    <field type="FloatField" name="price">0.0</field>
     <field type="BooleanField" name="deletable">False</field>
     <field type="CharField" name="module"></field>
     <field type="PositiveSmallIntegerField" name="type">0</field>
@@ -112,17 +209,31 @@
     <field type="CharField" name="module"></field>
     <field type="PositiveSmallIntegerField" name="type">0</field>
   </object>
-  <object pk="5" model="payment.paymentmethod">
+  <object pk="1" model="portlet.cartportlet">
+    <field type="CharField" name="title">Cart</field>
+  </object>
+  <object pk="1" model="portlet.categoriesportlet">
+    <field type="CharField" name="title">Categories</field>
+    <field type="PositiveSmallIntegerField" name="start_level">1</field>
+    <field type="PositiveSmallIntegerField" name="expand_level">1</field>
+  </object>
+  <object pk="1" model="portlet.pagesportlet">
+    <field type="CharField" name="title">Information</field>
+  </object>
+  <object pk="1" model="shipping.shippingmethod">
     <field type="BooleanField" name="active">True</field>
-    <field type="IntegerField" name="priority">5</field>
-    <field type="CharField" name="name">By invoice</field>
+    <field type="IntegerField" name="priority">1</field>
+    <field type="CharField" name="name">Standard</field>
     <field type="TextField" name="description"></field>
     <field type="TextField" name="note"></field>
     <field type="FileField" name="image"></field>
     <field to="tax.tax" name="tax" rel="ManyToOneRel"><None></None></field>
     <field type="FloatField" name="price">0.0</field>
-    <field type="BooleanField" name="deletable">False</field>
-    <field type="CharField" name="module"></field>
-    <field type="PositiveSmallIntegerField" name="type">0</field>
+    <field to="catalog.deliverytime" name="delivery_time" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="price_calculator">lfs.shipping.GrossShippingMethodPriceCalculator</field>
+  </object>
+  <object pk="order_number" model="lfs_order_numbers.ordernumbergenerator">
+    <field type="IntegerField" name="last">0</field>
+    <field type="CharField" name="format"></field>
   </object>
 </django-objects>
