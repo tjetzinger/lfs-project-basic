@@ -1,6 +1,6 @@
 # lfs-project-basic
 
-Is an installation template for the [LFS - Lightning Fast Shop](http://www.getlfs.com) online shop.
+Is an installation template for the [LFS - Lightning Fast Shop](http://www.getlfs.com).
 
 Now that Django 1.4 supports the notion of project templates, there is no longer a need for LFS's version of the [django-lfs-installer](http://pypi.python.org/pypi/django-lfs/0.7.6#downloads).
 
