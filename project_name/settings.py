@@ -206,7 +206,7 @@ CACHE_MIDDLEWARE_KEY_PREFIX = "lfs"
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 CACHE_BACKEND = 'dummy:///'
 
-EMAIL_HOST = ""
+EMAIL_HOST = "localhost"
 EMAIL_HOST_USER = ""
 EMAIL_HOST_PASSWORD = ""
 
